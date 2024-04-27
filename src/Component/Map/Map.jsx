@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Button from "react-bootstrap/Button";
+import RenderModal from "../Game/Modal/RenderModal";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Dice from "../Dice/Dice";
 import "./Map.css";
 
@@ -6,6 +9,12 @@ const Map = () => {
   const [boardSizeRow, setBoardSizeRow] = useState(5); // 보드 행 크기 상태
   const [boardSizeCol, setBoardSizeCol] = useState(7); // 보드 열 크기 상태
   const [board, setBoard] = useState([]); // 보드 상태
+  const [cell, setCell] = useState("");
+  const [show, setShow] = useState(false);
+
+  const handleShow = (breakpoint) => {
+    setShow(true);
+  };
 
   useEffect(() => {
     // 보드 초기화
@@ -18,20 +27,12 @@ const Map = () => {
     );
   };
 
-  const [diceResult, setDiceResult] = useState(null); // 주사위 결과 상태
-
-  // 주사위를 굴리는 함수
-  const rollDice = () => {
-    const result = Math.floor(Math.random() * 6) + 1; // 1부터 6 사이의 난수 생성
-    setDiceResult(result); // 주사위 결과 업데이트
-  };
-
   const renderBoard = () => {
     return (
       <div className="board-wrap">
         <div className="board">
           {board.map((row, rowIndex) => (
-            <div key={rowIndex} className="row">
+            <div key={rowIndex} className="board-row">
               {row.map((cell, colIndex) => {
                 // 가장자리 칸인지 확인
                 if (
@@ -40,15 +41,23 @@ const Map = () => {
                   colIndex !== 0 &&
                   colIndex !== boardSizeCol - 1
                 ) {
-                  return <div className="cell-none"></div>;
+                  return <div className="cell-none"></div>; // 가운데 칸은 비움
                 } else {
                   return (
-                    <div key={`${rowIndex}-${colIndex}`} className="cell">
-                      {/* 여기에 셀 내용 추가 */}
+                    <div
+                      key={`${rowIndex}-${colIndex}`}
+                      className="cell"
+                      onClick={() => {
+                        handleShow(true);
+                        setCell("" + rowIndex + colIndex);
+                      }}
+                    >
+                      {`${rowIndex}-${colIndex}`}
                     </div>
-                  ); // 가운데 칸은 비움
+                  );
                 }
               })}
+              <RenderModal show={show} setShow={setShow} cell={cell} />
             </div>
           ))}
         </div>

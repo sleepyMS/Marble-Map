@@ -34,7 +34,7 @@ const Dice = () => {
 
   return (
     <div
-      className={`container ${isRolling ? "rolling" : ""}`}
+      className={`dice-container ${isRolling ? "rolling" : ""}`}
       onClick={rollDice}
     >
       <div className="dice">
