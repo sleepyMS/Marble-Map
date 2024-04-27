@@ -1,0 +1,53 @@
+.board-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+:root {
+  --cell-size-width: 150px; /* 변수 생성 및 값 할당 */
+  --cell-size-height: 120px; /* 변수 생성 및 값 할당 */
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: var(--cell-size-width); /* 셀의 크기 조정 */
+  height: var(--cell-size-height); /* 셀의 크기 조정 */
+  border: 1px solid black; /* 셀 테두리 스타일 지정 */
+  background-color: white; /* 셀의 배경색 지정 */
+}
+
+.cell-none {
+  width: var(--cell-size-width); /* 셀의 크기 조정 */
+  height: var(--cell-size-height); /* 셀의 크기 조정 */
+  padding: 0.8px;
+}
+
+.cell.empty {
+  background-color: transparent; /* 가운데 셀의 배경색을 투명하게 설정 */
+}
+
+.row:first-child .cell, /* 첫 번째 행의 모든 셀 */
+  .row:last-child .cell, /* 마지막 행의 모든 셀 */
+  .row .cell:first-child, /* 각 행의 첫 번째 셀 */
+  .row .cell:last-child {
+  /* 각 행의 마지막 셀 */
+  background-color: transparent; /* 가장자리 셀의 배경색을 투명하게 설정 */
+}
+
+.dice-wrap {
+  position: absolute;
+}
