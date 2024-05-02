@@ -24,7 +24,7 @@ const Dice = () => {
   const rollDice = () => {
     if (!isRolling) {
       setIsRolling(true);
-      const newResult = Math.floor(Math.random() * 6) + 1;
+      const newResult = Math.floor(Math.random() * 6) + 1; // 랜덤으로 1~6 숫자 생성
       setResult(newResult);
       setTimeout(() => {
         setIsRolling(false);
@@ -34,7 +34,7 @@ const Dice = () => {
 
   return (
     <div
-      className={`dice-container ${isRolling ? "rolling" : ""}`}
+      className={`dice-container ${isRolling ? "rolling" : "stop-rolling"}`}
       onClick={rollDice}
     >
       <div className="dice">

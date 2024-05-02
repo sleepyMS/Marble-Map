@@ -4,6 +4,8 @@
   align-items: center;
   min-height: 100vh;
   min-width: 100vw;
+  background: url("../../../public/img/background.jpg") no-repeat;
+  background-size: cover;
 }
 
 :root {
@@ -26,6 +28,7 @@
   height: var(--cell-size-height); /* 셀의 크기 조정 */
   border: 3px solid black; /* 셀 테두리 스타일 지정 */
   background-color: white; /* 셀의 배경색 지정 */
+  box-shadow: 10px 10px 10px black;
 }
 .cell:hover {
   background-color: skyblue;
