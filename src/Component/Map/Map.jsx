@@ -17,6 +17,10 @@ const Map = () => {
     // 예시 이미지 경로와 ID를 여기에 추가하세요.
     { id: "piece1", src: "img/team1.jpg" },
     { id: "piece2", src: "img/team2.jpg" },
+    { id: "piece3", src: "img/team3.jpg" },
+    { id: "piece4", src: "img/team4.jpg" },
+    { id: "piece5", src: "img/team5.jpg" },
+    { id: "piece6", src: "img/team6.jpg" },
     // 모든 장기말 이미지를 추가하세요.
   ];
 

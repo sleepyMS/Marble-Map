@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Shuffle from "../Shuffle/Shuffle";
 
 const RenderModal = ({ show, setShow, cell }) => {
   let cellDataBases = {
     "00": { title: "초성게임", write: "게임 내용" },
     "01": { title: "상식게임" },
   };
-  let randomGame = {
-    "": {}
-  };
+  let teamImgs = [
+    "img/team1.jpg",
+    "img/team2.jpg",
+    "img/team3.jpg",
+    "img/team4.jpg",
+    "img/team5.jpg",
+    "img/team6.jpg",
+  ];
 
   // cellDataBases[cell]가 undefined인지를 먼저 확인한 후에 title에 접근
   const title = cellDataBases[cell] ? cellDataBases[cell].title : "Untitled";
@@ -39,7 +45,8 @@ const RenderModal = ({ show, setShow, cell }) => {
               transform: "translate(-50%, -50%)",
             }}
           >
-            {write}
+            {/* {write} */}
+            <Shuffle teamImgs={teamImgs} />
           </h1>
         </Modal.Body>
         <Modal.Footer>
