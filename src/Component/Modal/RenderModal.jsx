@@ -7,6 +7,9 @@ const RenderModal = ({ show, setShow, cell }) => {
     "00": { title: "초성게임", write: "게임 내용" },
     "01": { title: "상식게임" },
   };
+  let randomGame = {
+    "": {}
+  };
 
   // cellDataBases[cell]가 undefined인지를 먼저 확인한 후에 title에 접근
   const title = cellDataBases[cell] ? cellDataBases[cell].title : "Untitled";

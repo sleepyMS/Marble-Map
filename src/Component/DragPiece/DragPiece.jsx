@@ -56,9 +56,9 @@ function DragPiece({ src }) {
   return (
     <img
       ref={pieceRef}
-      src={src} // 여기에 이미지 경로를 넣으세요.
+      src={src}
       onMouseDown={onMouseDown}
-      style={{ position: "absolute", cursor: "grab", userSelect: "none" }}
+      style={{ position: "absolute", cursor: "grab", userSelect: "none", width: "100px", height: "100px" }}
       draggable="false"
       alt="Draggable Piece"
     />

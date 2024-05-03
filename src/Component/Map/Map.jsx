@@ -15,8 +15,8 @@ const Map = () => {
 
   const pieces = [
     // 예시 이미지 경로와 ID를 여기에 추가하세요.
-    { id: "piece1", src: "../../../public/img/team1.jpg" },
-    { id: "piece2", src: "../../../public/img/team2.jpg" },
+    { id: "piece1", src: "img/team1.jpg" },
+    { id: "piece2", src: "img/team2.jpg" },
     // 모든 장기말 이미지를 추가하세요.
   ];
 
@@ -53,8 +53,9 @@ const Map = () => {
                 } else {
                   return (
                     <div
+                      id={`cell-${rowIndex}-${colIndex}`}
                       key={`${rowIndex}-${colIndex}`}
-                      className="cell"
+                      className={`cell cell-${rowIndex}-${colIndex}`}
                       onClick={() => {
                         handleShow(true);
                         setCell("" + rowIndex + colIndex);
@@ -66,10 +67,10 @@ const Map = () => {
                   );
                 }
               })}
-              <RenderModal show={show} setShow={setShow} cell={cell} />
             </div>
           ))}
         </div>
+        <RenderModal show={show} setShow={setShow} cell={cell} />
         <div className="dice-wrap">
           <Dice />
         </div>
