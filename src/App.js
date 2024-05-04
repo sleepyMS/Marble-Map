@@ -1,11 +1,12 @@
 import "./App.css";
-import Map from "./Component/Map/Map";
-import React, { useState } from "react";
+import Board from "./Component/Board/Board";
+import Preview from "./Component/Preview/Preview";
 
 function App() {
   return (
     <div>
-      <Map />
+      <Preview />
+      <Board />
     </div>
   );
 }
