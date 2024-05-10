@@ -32,10 +32,18 @@ const Dice = () => {
     }
   };
 
+  const playSound = () => {
+    const audio = new Audio("sound/dice.mp3");
+    audio.play();
+  };
+
   return (
     <div
       className={`dice-container ${isRolling ? "rolling" : "stop-rolling"}`}
-      onClick={rollDice}
+      onClick={() => {
+        rollDice();
+        playSound();
+      }}
     >
       <div className="dice">
         {dice.map((num, numIndex) => {

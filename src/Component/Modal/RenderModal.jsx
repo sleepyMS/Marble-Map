@@ -19,15 +19,14 @@ const RenderModal = ({ show, setShow, cell, cellCnt }) => {
     56: { title: "VS" },
     "00": { title: "상식퀴즈", game: "gameQuize" },
     "02": { title: "청개구리 가위바위보", game: "none" },
-    "05": { title: "세금", game: "none" },
+    "05": { title: "세금", game: "none", write: "세금 징수 (-50p)" },
     "06": { title: "동문서답", game: "gameEastWest" },
     20: { title: "단어 완성하기", game: "gameTwoWord" },
     36: { title: "한글자씩 늘려 말하기", game: "gameFiveLetter" },
     40: { title: "단어 완성하기", game: "gameTwoWord" },
-    50: { title: "연금", game: "none" },
+    50: { title: "연금", game: "none", write: "쌓은 세금 환급!!!" },
     51: { title: "청개구리 가위바위보", game: "none" },
     53: { title: "동문서답", game: "gameEastWest" },
-    55: { title: "초성퀴즈", game: "none" },
   };
 
   let teamImgs = [
@@ -93,7 +92,7 @@ const RenderModal = ({ show, setShow, cell, cellCnt }) => {
 
   // cellDataBases[cell]가 undefined인지를 먼저 확인한 후에 title에 접근
   const title = cellDataBases[cell] ? cellDataBases[cell].title : "VS";
-  // const write = cellDataBases[cell] ? cellDataBases[cell].write : "Untitled";
+  const write = cellDataBases[cell] ? cellDataBases[cell].write : "Untitled";
 
   return (
     <div
@@ -119,7 +118,7 @@ const RenderModal = ({ show, setShow, cell, cellCnt }) => {
               transform: "translate(-50%, -50%)",
             }}
           >
-            {/* {write} */}
+            {write}
             {cellDataBases[cell]?.title == "VS" ? (
               <div>
                 <div

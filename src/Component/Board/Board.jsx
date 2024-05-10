@@ -34,6 +34,15 @@ const Board = () => {
     setBoard(generateEmptyBoard());
   }, [generateEmptyBoard]); // boardSizeRow 또는 boardSizeCol 상태가 변경될 때마다 useEffect가 실행
 
+  const playSoundTax = () => {
+    const audio = new Audio("sound/tax.mp3");
+    audio.play();
+  };
+  const playSoundTax2 = () => {
+    const audio = new Audio("sound/tax2.mp3");
+    audio.play();
+  };
+
   return (
     <div className="board-wrap">
       <div className="board">
@@ -58,6 +67,11 @@ const Board = () => {
                       setShow(true);
                       setCell("" + rowIndex + colIndex);
                       setCellCnt(cellCnt + 1);
+                      if (`${rowIndex}-${colIndex}` == "0-5") {
+                        playSoundTax();
+                      } else if (`${rowIndex}-${colIndex}` == "5-0") {
+                        playSoundTax2();
+                      }
                     }}
                     style={{ fontSize: "4rem" }}
                   >
