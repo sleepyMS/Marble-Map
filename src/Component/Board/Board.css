@@ -80,6 +80,60 @@
   background-position: center;
 }
 
+.cell.cell-0-0 {
+  background: url("../../../public/img/game2-1.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cell.cell-5-3 {
+  background: url("../../../public/img/game2-2.jpg") no-repeat;
+  background-size: cover;
+  background-position: left;
+}
+
+.cell.cell-0-2 {
+  background: url("../../../public/img/game2-3.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cell.cell-5-5 {
+  background: url("../../../public/img/game2-4.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cell.cell-3-6 {
+  background: url("../../../public/img/game2-5.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cell.cell-4-6 {
+  background: url("../../../public/img/game2-6.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cell.cell-0-6 {
+  background: url("../../../public/img/game2-2.jpg") no-repeat;
+  background-size: cover;
+  background-position: left;
+}
+
+.cell.cell-5-1 {
+  background: url("../../../public/img/game2-3.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cell.cell-2-0 {
+  background: url("../../../public/img/game2-6.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .dice-wrap {
   position: absolute;
 }

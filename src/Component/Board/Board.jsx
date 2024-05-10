@@ -11,6 +11,7 @@ const Board = () => {
   const [board, setBoard] = useState([]); // 보드 상태
   const [cell, setCell] = useState("");
   const [show, setShow] = useState(false);
+  const [cellCnt, setCellCnt] = useState(0);
 
   // 장기말 이미지
   const pieces = [
@@ -56,6 +57,7 @@ const Board = () => {
                     onClick={() => {
                       setShow(true);
                       setCell("" + rowIndex + colIndex);
+                      setCellCnt(cellCnt + 1);
                     }}
                     style={{ fontSize: "4rem" }}
                   >
@@ -67,7 +69,12 @@ const Board = () => {
           </div>
         ))}
       </div>
-      <RenderModal show={show} setShow={setShow} cell={cell} />
+      <RenderModal
+        show={show}
+        setShow={setShow}
+        cell={cell}
+        cellCnt={cellCnt}
+      />
       <div className="dice-wrap">
         <Dice />
       </div>

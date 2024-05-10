@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Button from "react-bootstrap/Button";
+import gameDB from "./gameDB.json";
 
-const Shuffle = ({ images, type }) => {
+const Shuffle = ({
+  images,
+  type,
+  getTeamGameCnt,
+  setGetTeamGameCnt,
+  setTeamGame,
+}) => {
   // 현재 보여줄 이미지의 상태와 선택된 이미지의 상태를 관리
   const [currentImage, setCurrentImage] = useState("");
   const [selectedImage, setSelectedImage] = useState("");
@@ -32,7 +39,10 @@ const Shuffle = ({ images, type }) => {
   };
 
   const randomGameSelected = (e) => {
-    alert(e);
+    if (e == "img/game1-1.jpg" || e == "img/game1-2.jpg") {
+      setGetTeamGameCnt(getTeamGameCnt + 1);
+      setTeamGame(e);
+    }
   };
 
   return (
