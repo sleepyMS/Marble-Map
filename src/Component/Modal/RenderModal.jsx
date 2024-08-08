@@ -67,7 +67,7 @@ const RenderModal = ({ show, setShow, cell, cellCnt }) => {
       console.warn("유효하지 않은 gameKey입니다:", gameKey);
       return;
     }
-    const items = selectRandomItems(gameDB[gameKey], 4);
+    const items = selectRandomItems(gameDB[gameKey], 1);
     setSelectedItems((prev) => [...prev, ...items]); // 이미 선택된 항목들에 새로 선택된 항목들을 추가
     setCurrentGame(items);
   };
@@ -156,6 +156,7 @@ const RenderModal = ({ show, setShow, cell, cellCnt }) => {
             ) : (
               <ul
                 style={{
+                  listStyle: "none",
                   fontSize: "3rem",
                 }}
               >

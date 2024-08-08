@@ -58,7 +58,13 @@ function DragPiece({ src }) {
       ref={pieceRef}
       src={src}
       onMouseDown={onMouseDown}
-      style={{ position: "absolute", cursor: "grab", userSelect: "none", width: "100px", height: "100px" }}
+      style={{
+        position: "absolute",
+        cursor: "grab",
+        userSelect: "none",
+        width: "100px",
+        height: "100px",
+      }}
       draggable="false"
       alt="Draggable Piece"
     />

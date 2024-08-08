@@ -75,7 +75,7 @@ const Board = () => {
                     }}
                     style={{ fontSize: "4rem" }}
                   >
-                    {`${rowIndex}-${colIndex}`}
+                    {/* {`${rowIndex}-${colIndex}`} */}
                   </div>
                 );
               }
